@@ -18,6 +18,8 @@ import lombok.Setter;
 @Setter
 public class Noticias extends Base{
 	
+	private static final long serialVersionUID = 1L;
+	
 	private String titulo;
 	private String resumen; 
 	private String imagen; 

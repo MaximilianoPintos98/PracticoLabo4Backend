@@ -16,13 +16,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "persona")
+@Table(name = "empresas")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 public class Empresa extends Base{
-
+	private static final long serialVersionUID = 1L;
+	
+	
 	private String denominacion;
 	private String telefono;
 	private String email;
