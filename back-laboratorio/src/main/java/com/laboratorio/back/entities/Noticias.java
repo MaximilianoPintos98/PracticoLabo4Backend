@@ -3,7 +3,10 @@ package com.laboratorio.back.entities;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,6 +28,13 @@ public class Noticias extends Base{
 	private String imagen; 
 	private String contenidoHTML;
 	private char publicada;
+	
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date fecha; 
+	
+	@PrePersist
+	public void prePersist() {
+		this.fecha = new Date();
+	}
 
 }
