@@ -2,6 +2,8 @@ package com.laboratorio.back.repositories;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -13,5 +15,8 @@ public interface NoticiasRepository extends BaseRepository<Noticias, Long> {
 
 	@Query(value = "SELECT n FROM Noticias n WHERE n.titulo LIKE %:filtro% OR n.resumen LIKE %:filtro%")
 	List<Noticias> search(@Param("filtro") String filtro);
+	
+	@Query(value = "SELECT n FROM Noticias n WHERE n.titulo LIKE %:filtro% OR n.resumen LIKE %:filtro%")
+	Page<Noticias> search(@Param("filtro") String filtro, Pageable pageable);
 	
 }
