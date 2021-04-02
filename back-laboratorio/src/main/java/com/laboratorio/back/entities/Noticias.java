@@ -23,18 +23,6 @@ public class Noticias extends Base{
 	
 	private static final long serialVersionUID = 1L;
 	
-	private String titulo;
-	private String resumen; 
-	private String imagen; 
-	private String contenidoHTML;
-	private char publicada;
 	
-	@Temporal(TemporalType.TIMESTAMP)
-	private Date fecha; 
-	
-	@PrePersist
-	public void prePersist() {
-		this.fecha = new Date();
-	}
 
 }
